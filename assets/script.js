@@ -9,39 +9,39 @@ let numbers = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", '9'];
 let specialCharacters = ["!", "@", '"', "'", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "[", "]", "{", "}", "|", "`", "~", "<", ">", "?", ",", "." ];
 arr = [];
 
-// need to ask user for their chosen password options
+// Need to ask user for their chosen password options
 function getUsersPasswordOptions() {
-  // variable for password length
+  // Variable for password length
   let passwordLength = parseInt(prompt('How many characters would you like your password to be? Must choose between 8 and 128 characters.'), 10)
-  // check if password length entered is a number
+  // Check if password length entered is a number
   if (Number.isNaN(passwordLength)) {
-    alert("Password length must be a number.")
+    alert("Password length must be a number!")
     return;
   }
   // Check that password is long enough
   if (passwordLength < 8) {
-    alert("Password is not long enough.")
+    alert("Password is not long enough!")
     return;
   }
   // Check that password is not too long
 if (passwordLength > 128) {
-  alert("Password is too long.")
+  alert("Password is too long!")
   return;
 }
   // Variables to store whether user has selected an individual option
-  let includeSpecialCharacters = confirm("Hit OK to include special characters");
+  let includeSpecialCharacters = confirm("Hit OK to include special characters.");
   if (includeSpecialCharacters === true) {
     arr = arr.concat(specialCharacters);
   };
-  let includesLowerCaseLetters = confirm("Hit OK to include lower case letter");
+  let includesLowerCaseLetters = confirm("Hit OK to include lower case letter.");
   if (includesLowerCaseLetters === true) {
     arr = arr.concat(lowerCaseLetters);
   };
-  let includesUpperCaseLetters = confirm("Hit OK to unclude upper case letters");
+  let includesUpperCaseLetters = confirm("Hit OK to unclude upper case letters.");
   if (includesUpperCaseLetters === true) {
     arr = arr.concat(upperCaseLetters);
   };
-  let includesNumbers = confirm("Hit OK to include numbers");
+  let includesNumbers = confirm("Hit OK to include numbers.");
   if (includesNumbers === true) {
     arr = arr.concat(numbers);
   };
@@ -57,43 +57,15 @@ if (includeSpecialCharacters == false && includesLowerCaseLetters == false && in
 let index = 0; 
 let randomElement = ""; 
 
+//Function to get random element from array-generate password
 function generatePassword() {
     for (let i= choice; i < passwordLength; i++) {
         index = Math.floor(Math.random() * arr.length);
         randomElement = arr[index];
-        
+        randomPassword = randomPassword += randomElement;
     }
+    return randomPassword;
 }
-
-
-  // Object to group users selections
-  let usersPasswordOptions = {
-    passwordLength: passwordLength,
-    includeSpecialCharacters: includeSpecialCharacters,
-    includesUpperCaseLetters: includesUpperCaseLetters,
-    includesLowerCaseLetters: includesLowerCaseLetters,
-    includesNumbers: includesNumbers
-  }
-  return usersPasswordOptions
-
-
-// Function to get random element from array 
-function getRandomArrayElement(arr) {
-  let randomIndex = Math.floor(Math.random() * arr.length)
-  let randomElement = arr[randomIndex]
-  return randomElement
-}
-
-// Function to generate password
-function generatePassword() {
-  let usersOptions = getUsersPasswordOptions();
-  // Check to see if we have any options
-  if (!usersOptions) {
-    return;
-  }
-  // variable to store the password as we build it
-  let result = []
-
 
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
