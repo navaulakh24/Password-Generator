@@ -5,7 +5,8 @@ let upperCaseLetters = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
 let numbers = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", '9'];
 let specialCharacters = ["!", "@", '"', "'", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "[", "]", "{", "}", "|", "`", "~", "<", ">", "?", ",", "." ];
 arr = [];
-let count = 1
+let count = 1;
+let password = [];
 let generateBtn = document.querySelector("#generate");
 
 // Need to ask user for their chosen password options
@@ -64,7 +65,7 @@ if (includeSpecialCharacters == false && includesLowerCaseLetters == false && in
 };
 
 let index = 0; 
-let Element = ""; 
+let randomElement = ""; 
 
 //Function to get random element from array-generate password
 function generatePassword() {
