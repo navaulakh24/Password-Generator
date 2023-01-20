@@ -50,7 +50,20 @@ if (passwordLength > 128) {
 if (includeSpecialCharacters == false && includesLowerCaseLetters == false && includesUpperCaseLetters == false && includesNumbers == false) {
     alert("Must select at least one character type");
 };
+//If/when condition is met, generate password
+    generatePassword();
 
+}
+let index = 0; 
+let randomElement = ""; 
+
+function generatePassword() {
+    for (let i= choice; i < passwordLength; i++) {
+        index = Math.floor(Math.random() * arr.length);
+        randomElement = arr[index];
+        
+    }
+}
 
 
   // Object to group users selections
@@ -62,7 +75,7 @@ if (includeSpecialCharacters == false && includesLowerCaseLetters == false && in
     includesNumbers: includesNumbers
   }
   return usersPasswordOptions
-}
+
 
 // Function to get random element from array 
 function getRandomArrayElement(arr) {
@@ -81,20 +94,6 @@ function generatePassword() {
   // variable to store the password as we build it
   let result = []
 
-  // Array for potential characters 
-
-  // Array for confirmed characters 
-
-  // if statements for each character choice inlcuding in usersOptions
-      // cocatenate to potential chars array the spec characters array
-      // confirmecChars array, we need to push into it a randomised character form the spec chars array
-
-  // write two for loops
-
-
-  return result
-}
-
 
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
@@ -107,32 +106,3 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-
-
-
-
-
-
-// function generatePassword () {
-//   enter = window.prompt("How many characters would you like your password to be? Must choose between 8 and 128 characters.");
-//   if (!userChoice) {
-//     return;
-//   }
-//   if (!enter) {
-//     window.alert("Please enter a value.");
-//   } else if (enter > 128 || enter < 8) {
-//     enter = window.prompt("You must choose a value between 8 and 128 to continue.");
-//   }else {
-//     confirmLowerCaseLetters = confirm("Would you like lower case letters?");
-//     confirmUpperCaseLetters = confirm("Would you like upper case letters?");
-//     confirmNumbers = confirm("Would you like to include any numbers?");
-//     confirmSpecialCharacters = confirm("Would you like to include special characters?");
-//   };
-//   if (!confirmLowerCaseLetters && !confirmUpperCaseLetters && !confirmNumbers && !confirmSpecialCharacters) {
-//     options = window.alert("You must select criteria to generate password.");
-//   }
-//   else if (confirmLowerCaseLetters && confirmUpperCaseLetters && confirmNumbers && confirmSpecialCharacters) {
-//     options = s
-//   }
-// }
