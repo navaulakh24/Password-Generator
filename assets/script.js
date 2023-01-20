@@ -1,6 +1,3 @@
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
 
 // Arrays for each character type
 let lowerCaseLetters = [ "a", 'b', 'c', 'd', 'e', "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
@@ -8,6 +5,8 @@ let upperCaseLetters = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
 let numbers = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", '9'];
 let specialCharacters = ["!", "@", '"', "'", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "[", "]", "{", "}", "|", "`", "~", "<", ">", "?", ",", "." ];
 arr = [];
+let count = 1
+let generateBtn = document.querySelector("#generate");
 
 // Need to ask user for their chosen password options
 function getUsersPasswordOptions() {
@@ -32,18 +31,26 @@ if (passwordLength > 128) {
   let includeSpecialCharacters = confirm("Hit OK to include special characters.");
   if (includeSpecialCharacters === true) {
     arr = arr.concat(specialCharacters);
+    randomPassword += randomElement(specialCharacters);
+    count += 1;
   };
   let includesLowerCaseLetters = confirm("Hit OK to include lower case letter.");
   if (includesLowerCaseLetters === true) {
     arr = arr.concat(lowerCaseLetters);
+    randomPassword += randomElement(lowerCaseLetters);
+    count += 1
   };
   let includesUpperCaseLetters = confirm("Hit OK to unclude upper case letters.");
   if (includesUpperCaseLetters === true) {
     arr = arr.concat(upperCaseLetters);
+    randomPassword += randomElement(upperCaseLetters);
+    count += 1;
   };
   let includesNumbers = confirm("Hit OK to include numbers.");
   if (includesNumbers === true) {
     arr = arr.concat(numbers);
+    randomPassword += randomElement(numbers);
+    count += 1;
   };
 
 
@@ -55,11 +62,11 @@ if (includeSpecialCharacters == false && includesLowerCaseLetters == false && in
 
 }
 let index = 0; 
-let randomElement = ""; 
+let Element = ""; 
 
 //Function to get random element from array-generate password
 function generatePassword() {
-    for (let i= choice; i < passwordLength; i++) {
+    for (let i= 0; i < passwordLength; i++){
         index = Math.floor(Math.random() * arr.length);
         randomElement = arr[index];
         randomPassword = randomPassword += randomElement;
@@ -67,14 +74,14 @@ function generatePassword() {
     return randomPassword;
 }
 
-// Assignment Code
-let generateBtn = document.querySelector("#generate");
-
 // Write password to the #password input
 function writePassword() {
-  let password = generatePassword();
-  let passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
