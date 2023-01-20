@@ -5,9 +5,14 @@ let upperCaseLetters = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
 let numbers = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", '9'];
 let specialCharacters = ["!", "@", '"', "'", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "[", "]", "{", "}", "|", "`", "~", "<", ">", "?", ",", "." ];
 arr = [];
-let count = 1;
-let password = [];
+var count = 1;
+var password = [];
 let generateBtn = document.querySelector("#generate");
+var passwordLength;
+var randomPassword;
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 // Need to ask user for their chosen password options
 function getUsersPasswordOptions() {
@@ -30,7 +35,7 @@ if (passwordLength > 128) {
 }
 else {
 // Variables to store whether user has selected an individual option
- } let includeSpecialCharacters = confirm("Hit OK to include special characters.");
+let includeSpecialCharacters = confirm("Hit OK to include special characters.");
   if (includeSpecialCharacters === true) {
     arr = arr.concat(specialCharacters);
     randomPassword += randomElement(specialCharacters);
@@ -54,15 +59,15 @@ else {
     randomPassword += randomElement(numbers);
     count += 1;
   };
-
+};
 
 if (includeSpecialCharacters == false && includesLowerCaseLetters == false && includesUpperCaseLetters == false && includesNumbers == false) {
     alert("Must select at least one character type");
+}
 //If/when condition is met, generate password
-   }   createPassword();
-
-
-};
+  else {
+      createPassword();
+}};
 
 let index = 0; 
 let randomElement = ""; 
@@ -85,6 +90,3 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
