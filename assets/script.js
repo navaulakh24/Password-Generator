@@ -11,7 +11,7 @@ let generateBtn = document.querySelector("#generate");
 // Need to ask user for their chosen password options
 function getUsersPasswordOptions() {
   // Variable for password length
-  let passwordLength = parseInt(prompt('How many characters would you like your password to be? Must choose between 8 and 128 characters.'), 10)
+  passwordLength = prompt('How many characters would you like your password to be? Must choose between 8 and 128 characters.');
   // Check if password length entered is a number
   if (Number.isNaN(passwordLength)) {
     alert("Password length must be a number!")
@@ -27,8 +27,9 @@ if (passwordLength > 128) {
   alert("Password is too long!")
   return;
 }
-  // Variables to store whether user has selected an individual option
-  let includeSpecialCharacters = confirm("Hit OK to include special characters.");
+else {
+// Variables to store whether user has selected an individual option
+ } let includeSpecialCharacters = confirm("Hit OK to include special characters.");
   if (includeSpecialCharacters === true) {
     arr = arr.concat(specialCharacters);
     randomPassword += randomElement(specialCharacters);
@@ -56,11 +57,12 @@ if (passwordLength > 128) {
 
 if (includeSpecialCharacters == false && includesLowerCaseLetters == false && includesUpperCaseLetters == false && includesNumbers == false) {
     alert("Must select at least one character type");
-};
 //If/when condition is met, generate password
-    generatePassword();
+   }   createPassword();
 
-}
+
+};
+
 let index = 0; 
 let Element = ""; 
 
