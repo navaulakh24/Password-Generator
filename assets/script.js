@@ -15,10 +15,6 @@ let includeSpecialCharacters;
 let includesLowerCaseLetters;
 let includesUpperCaseLetters;
 let includesNumbers;
-
-
-
-
 let index = 0;
 let randomElement = "";
 
@@ -83,9 +79,6 @@ function generatePassword() {
 
         console.log(arr);
     }
-
-
-
 
     for (let i = 0; i < passwordLength; i++) {
         index = Math.floor(Math.random() * arr.length);
