@@ -7,7 +7,7 @@ The application relies on Javascript to generate a random password for a user ba
 To view the project, click on the link below which has been deployd to GitHub. You can also download the source files including an index.html, style.css, and script.js
 and use a text editor such as Visual Studi Code.
 
-![Webpage](./assets/03-javascript-homework-demo.png)
+![Webpage](./assets/images/03-javascript-homework-demo.png)
 
 ## Deployment link
 
@@ -34,14 +34,14 @@ and use a text editor such as Visual Studi Code.
 
 
 
-![Webpage](./assets/Screenshot%20(3).png)
+![Webpage](./assets/images/Screenshot%20(3).png)
 
 A series of prompts will come up on the user's screen and they must satisfy the requirements in order to generate a password.
 
-![Webpage](./assets/Screenshot%20(4).png)
+![Webpage](./assets/images/Screenshot%20(4).png)
 
 Once all questions have been answered, you will have a secure random generated password in the box.
-![Webpage](./assets/Screenshot%20(5).png)
+![Webpage](./assets/images/Screenshot%20(5).png)
 
 ## To Execute File:
 Open this is the browser
