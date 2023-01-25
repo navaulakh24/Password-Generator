@@ -11,7 +11,7 @@ and use a text editor such as Visual Studi Code.
 
 ## Deployment link
 
-[Web Accessibility](https://navaulakh24.github.io/Password-Generator/)
+[Web Accessibility](https://navaulakh24.github.io/Secure-Random-Password-Generator/)
 
 ## User Story
 - AS A coding boot camp student
